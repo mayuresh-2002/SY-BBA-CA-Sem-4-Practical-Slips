@@ -1,0 +1,87 @@
+Slip 26 ques 1
+
+include<iostream.h>
+#include<conio.h>
+int add(int,int,int);
+float add(float,float,float);
+    
+int main()
+{
+int a1,a2,a3;
+float f1,f2,f3;
+clrscr();
+ 
+cout<<"Enter Integer Details:";
+cin>>a1>>a2>>a3;
+ 
+cout<<"Enter Float Details:";
+cin>>f1>>f2 >>f3;
+ 
+cout<<"\n Avarage of Integer "<<add(a1,a2,a3);
+cout<<"\n Avarage of float "<<add(f1,f2,f3);
+ 
+getch();                     
+return 0;
+}
+ 
+int add(int a1,int a2,int a3)
+{
+return ((a1+a2+a3)/3);
+}
+float add(float  f1,float  f2,float f3)
+{
+return float((f1+f2+f3)/3);
+}
+
+
+
+
+Slip 26 ques 2
+
+include<conio.h>
+#include<stdio.h>
+#include<string.h>
+#include<iostream.h>
+ class time
+{
+int hours;
+int minutes;
+int second;
+public:
+friend istream & operator >>(istream &, time &);
+friend ostream & operator <<(ostream &, time &);
+int operator !=(time t2);
+};
+istream & operator >>(istream & stream, time & t)
+{
+return stream >>t.hours>>t.minutes>>t.second;
+}
+ostream & operator <<(ostream & stream, time & t)
+{
+return stream <<t.hours<<":"<<t.minutes<<":"<<t.second;
+}
+int time::operator !=(time t2)
+{
+if(hours==t2.hours&&minutes==t2.minutes&&second==t2.second)
+return 1;
+return 0;
+}
+ int main()
+{
+time t1,t2;
+clrscr();
+cout<<"\n Enter time as hour,minutes,seconds :";
+cin>>t1;
+cout<<"\n Enter time as hour,minutes,seconds :";
+cin>>t2;
+cout<<"\n First Time is :";
+cout<<t1;
+cout<<"\n Second Time is :";
+cout<<t2;
+if(t1!=t2)
+cout<<"\nBoth times are equal";
+else
+cout<<"\n Time not equal";
+getch();
+return 0;
+}

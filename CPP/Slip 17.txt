@@ -1,0 +1,239 @@
+Slip 17 ques 1
+
+include<iostream.h>
+
+#include<conio.h>
+
+class matrix
+
+{
+
+int a[3][3];
+
+public:
+
+void get();
+
+void disp();
+
+void operator -(matrix z);
+
+};
+
+void matrix::get()
+
+{
+
+cout<<"\n Enter the matrix:-";
+
+for(int i=0;i<3;i++)
+
+{
+
+for(int j=0;j<3;j++)
+
+{
+
+cin>>a[i][j];
+
+}
+
+}
+
+}
+
+void matrix::disp()
+
+{
+
+for(int i=0;i<3;i++)
+
+{
+
+for(int j=0;j<3;j++)
+
+{
+
+cout<<a[i][j]<<"";
+
+}
+
+cout<<"\n";
+
+}
+
+}
+
+void matrix::operator -(matrix z)
+
+{
+
+int mat[3][3];
+
+for(int i=0;i<3;i++)
+
+{
+
+for(int j=0;j<3;j++)
+
+{
+
+mat[i][j]=a[i][j]-z.a[i][j];
+
+}
+
+}
+
+cout<<"\nSubtraction of matrix:\n";
+
+for( i=0;i<3;i++)
+
+{
+
+for(int j=0;j<3;j++)
+
+{
+
+cout<<mat[i][j]<<"";
+
+}
+
+cout<<"\n";
+
+}
+
+}
+
+void main()
+
+{
+
+matrix m,n;
+
+clrscr();
+
+m.get();
+
+n.get();
+
+cout<<"\nMatrix 1st: \n";
+
+m.disp();
+
+cout<<"\nMatrix 2nd: \n";
+
+n.disp();
+
+m-n;
+
+getch();
+
+}
+
+Slip 17 ques 2
+include<iostream.h>
+#include<conio.h>
+class student
+{
+public:
+char name[20],class1[20];
+int sid;
+public:
+void get()
+{
+cout<<"Enter the Student Details:-";
+cin>>sid>>name>>class1;
+}
+void put()
+{
+cout<<"\n\n sid:- "<<sid;
+cout<<"\n\n name:-"<<name;
+cout<<"\n\n class1:-"<<class1;
+ }
+ };
+class comp
+{
+public:
+int cid;
+ char cname[10];
+public:
+void accept()
+{
+cout<<"\n\n Enter the Competition Details:-";
+cin>>cid>>cname;
+}
+void show()
+{
+cout<<"\n\n cid:-"<<cid;
+cout<<"\n\n cname:-"<<cname;
+}
+};
+class studcomp:student,comp
+{
+public:
+int rank;
+void acc1()
+{
+cout<<"\n Enter rank:-";
+cin>>rank;
+get();
+accept();
+}
+void put1()
+{
+cout<<"\n\n\n Rank:–"<<rank;
+put();
+show();
+}
+void sort(studcomp &r1,studcomp &r2)
+ {
+ studcomp rt;
+ if(r1.rank>r2.rank)
+ {
+ rt=r1;
+ r1=r2;
+ r2=rt;
+ }
+ }
+};
+ void main()
+ {
+ clrscr();
+ studcomp t[30];
+ int num,ch,rank;
+ char cont;
+clrscr();
+ cout<<"\n 1.Accept & display ";
+ cout<<"\n 2.Ascending";
+  do
+ {
+ cout<<"\n Enter your choice: ";
+ cin>>ch;
+ switch(ch)
+ {
+ case 1: cout<<"\n How many records you want to enter: ";
+ cin>>num;
+ for(int i=0;i<num;i++)
+ {
+ t[i].acc1();
+ }
+ for(i=0;i<num;i++)
+ {
+ t[i].put1();
+ }
+ break;
+ case 2:
+ for(i=0;i<num;i++)
+ {
+ for(int j=i+1;j<num;j++)
+ t[i].sort(t[i],t[j]);
+ t[i].put1();
+ }
+ break;
+  }
+ cout<<"\n Do you want to continue: ";
+ cin>>cont;
+ }
+ while(cont=='Y'||cont=='y');
+ getch();
+ }

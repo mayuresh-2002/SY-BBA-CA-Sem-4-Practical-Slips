@@ -1,0 +1,172 @@
+Slip 19 ques 1
+
+#include<iostream.h>
+
+#include<conio.h>
+
+class distance
+
+{
+
+int meter;
+
+float centimeter;
+
+public :
+
+void get()
+
+{
+
+cout<<"Enter meter value";
+
+cin>>meter;
+
+cout<<"Enter centimeter";
+
+cin>>centimeter;
+
+}
+
+void put()
+
+{
+
+cout<<"\t meter="<<this->meter;
+
+cout<<"\t centimeter="<<this->centimeter;
+
+}
+
+distance larger(distance d1,distance d2)
+
+{
+
+if(d1.meter>d2.meter)
+
+return d1;
+
+else if(d1.meter<d2.meter)
+
+return d2;
+
+else
+
+{
+
+if(d1.centimeter>d2.centimeter)
+
+return d1;
+
+else
+
+return d2;
+
+}
+
+}
+
+};
+
+int main()
+
+{
+
+distance d1,d2,d3;
+
+clrscr();
+
+cout<<"Enter First distance\n";
+
+d1.get();
+
+cout<<"Enter second distance\n";
+
+d2.get();
+
+d3=d3.larger(d1,d2);
+
+cout<<"\nLarger Distance\n";
+
+d3.put();
+
+getch();
+
+return 0;
+
+}
+
+
+Slip 19 ques 2
+
+include<iostream.h>
+#include<conio.h>
+class media
+{
+public:
+virtual void display()=0;
+};
+// class NewsPaper with data members N_Name, N_Editor, N_Price, No_of_Pages
+class NewsPaper:public media
+{
+public:
+int No_of_Pages,N_Price;
+char N_Name[20],N_Editor[20];
+void getnewspaper()
+{
+cout<<"\nenter the No_of_Pages:";
+cin>>No_of_Pages;
+cout<<"\nenter the N_Price:";
+cin>>N_Price;
+cout<<"\nenter the N_Name:";
+cin>>N_Name;
+cout<<"\nenter the N_Editor:";
+cin>>N_Editor;
+}
+void display();
+};
+ 
+ 
+//class Magazine with data members M_Name, M_Editor, M_Price
+ 
+class Magazine:public media
+{
+public:
+char M_Name[10],M_Editor[10];
+int M_Price;
+ 
+void getMagazine()
+{
+cout<<"\nenter the M_Name is:";
+cin>>M_Name;
+cout<<"\nenter the M_Editor is:";
+cin>>M_Editor;
+cout<<"\nenter the M_Price is:";
+cin>>M_Price;
+}
+void display();
+};
+void NewsPaper::display()
+{
+cout<<"\n No_of_Pages:-"<<No_of_Pages;
+cout<<"\n N_Price:"<<N_Price;
+cout<<"\n N_Name:"<<N_Name;
+cout<<"\n N_Editor:"<<N_Editor;
+}
+void Magazine::display()
+{
+cout<<"\n M_Name is:"<<M_Name;
+cout<<"\n M_Editor is:"<<M_Editor;
+cout<<"\n M_Price is:"<<M_Price;
+}
+void main()
+{
+clrscr();
+NewsPaper b;
+b.getnewspaper();
+b.display();
+Magazine c;
+c.getMagazine();
+c.display();
+getch();
+}

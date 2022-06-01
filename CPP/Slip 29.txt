@@ -1,0 +1,134 @@
+Slip 29 ques 1
+
+include<conio.h>
+#include<stdio.h>
+#include<iostream.h>
+ class bill
+{
+int unit,amt;
+int mid;
+char name[20];
+public:
+void get();
+void charge();
+void put();
+};
+ void bill::get()
+{
+cout<<"\n enter meter Id : ";
+cin>>mid;
+cout<<"\n enter name of user : ";
+cin>>name;
+cout<<"\n  enter units : ";
+cin >>unit;
+}
+ void bill::charge()
+{
+if(unit<=100)
+amt=150+(unit*1);
+else
+if((unit>100)&&(unit<=300))
+amt=150+(unit*2);
+else
+amt=150+(unit*3);
+if(amt<150)
+amt=150;
+else
+if(amt>250)
+amt=amt+(amt*15/100);
+}
+ void bill::put()
+{
+cout<<"\n MeterId="<<mid;
+cout<<"\n name of consumer="<<name;
+cout<<"\n units is ="<<unit;
+cout<<"\n total charges is ="<<amt;
+}
+ int main()
+{
+bill b[10];
+int n,i;
+clrscr();
+cout<<"\n enter how many users =";
+cin>>n;
+for(i=0;i<n;i++)
+b[i].get();
+cout<<"\n calculation of bill \n";
+for(i=0;i<n;i++)
+{
+b[i].charge();
+b[i].put();
+}
+getch();
+return 0;
+}
+
+
+Slip 29 ques 2
+
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class VisitingStaff
+{
+char name[10];
+int tot_sub;
+char sub_name[10][30];
+int wh,k;
+public:
+void getdata()
+{
+cout<<"\n\n Enter the name:- ";
+cin>>name;
+cout<<"\n\n How many subject-: ";
+cin>>tot_sub;
+ for(k=0;k<tot_sub;k++)
+ {
+cout<<"\n\n Enter the subject name;- ";
+cin>>sub_name[k];
+}
+cout<<"\n\n Enter the Wh: ";
+cin>>wh;
+}
+ 
+void display()
+ 
+{
+cout<<"\n Student name: "<<name;
+cout<<"\n Total Subjects:"<<tot_sub;
+for(k=0;k<tot_sub;k++)
+{
+cout<<"\n Subject Name:"<<sub_name[k];
+}
+cout<<"\n Working Hours:"<<wh;
+}
+void calculate(int rate=300)
+{
+cout<<"salary of VisitingStaff is Rs.:-"<<wh*rate;
+}
+};
+void main()
+{
+ 
+clrscr();
+ 
+VisitingStaff s[10];
+ int i,n;
+cout<<"\n How many records you waant?";
+cin>>n;
+ for(i=0;i<n;i++)
+ {
+s[i].getdata();
+ }
+ 
+ for(i=0;i<n;i++)
+ {
+s[i].display();
+}
+  for(i=0;i<n;i++)
+ {
+s[i].calculate();
+  }
+getch();
+ 
+}

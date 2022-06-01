@@ -1,0 +1,172 @@
+Slip 13 ques 1
+
+include<iostream.h>
+
+#include<conio.h>
+
+class Product
+
+{
+
+int id,price,Qty;
+
+char i_name[20];
+
+static int cnt;
+
+public:
+
+void getdata()
+
+{
+
+cout<<"\n Enter Product Id\t\t";
+
+cin>>id;
+
+cout<<"\n Enter Product name\t\t";
+
+cin>>i_name;
+
+cout<<"\n Enter Product price\t";
+
+cin>>price;
+
+cout<<"\n Enter Product Qty\t";
+
+cin>>Qty;
+
+cnt++;
+
+}
+
+void display()
+
+{
+
+//cout<<"\n********OUTPUT********";
+
+cout<<"\n\nProduct code =\t"<<code;
+
+cout<<"\nProduct name =\t"<<i_name;
+
+cout<<"\nProduct price =\t"<<price;
+
+cout<<"\nProduct QTY =\t"<<Qty;
+
+}
+
+static void nob()
+
+{
+
+cout<<"\n number of objects created for class are\t"<<cnt;
+
+}
+
+};
+
+int Product::cnt;
+
+void main()
+
+{
+
+clrscr();
+
+Product ob[10];
+
+int n;
+
+cout<<"\n Enter how many items : ";
+
+cin>>n;
+
+for(int i=0;i<n;i++)
+
+ob[i].getdata();
+
+for( i=0;i<n;i++)
+
+ob[i].display();
+
+ob[n-1].nob();
+
+getch();
+}
+
+
+
+
+Slip 13 ques 2
+
+include<stdio.h>
+
+#include<conio.h>
+
+#include<iostream.h>
+
+class Cuboid
+
+{
+
+float a,b,c;
+
+public:
+
+void getdata()
+
+{
+
+cout<<"\n Enter the Details : ";
+
+cin>>a>>b>>c;
+
+}
+
+void setdata()
+
+{
+
+cout<<a<<b<<c;
+
+}
+
+inline void volume()
+
+{
+
+cout<<"\n The volume of cuboid. =\t"<<a*b*c;
+
+}
+
+inline void surface_ area()
+
+{
+
+cout<<"\n The surface area of cuboid =\t"<<2ab+2ac+2bc;
+
+}
+
+};
+
+void main()
+
+{
+
+clrscr();
+
+Cuboid c;
+
+c.getdata();
+
+c.volume();
+
+c.surface_ area();
+
+getch();
+
+}
+
+
+

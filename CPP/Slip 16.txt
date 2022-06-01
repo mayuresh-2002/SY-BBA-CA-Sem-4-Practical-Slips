@@ -1,0 +1,168 @@
+Slip 16 ques 1
+include<iostream.h>
+#include<conio.h>
+#include<iomanip.h>
+#include<string.h>
+class Machine
+{
+private:
+int Machine_Id, Price;   //data members
+char name[10];
+public:
+Machine(int x1, int y1,char *z1)
+{
+strcpy(name,z1);
+Machine_Id = x1;
+Price = y1;
+ }
+ /* Copy constructor */
+Machine (const Machine &sam)
+{
+strcpy(name,sam.name);
+Machine_Id=sam.Machine_Id;
+Price=sam.Price;
+ }
+ void display()
+{
+cout<<"\n Name:\t"<<name;
+cout<<"\n MachineID:\t"<<setprecision(2)<<Machine_Id;
+cout<<"\n Price:\t"<<setw(3)<<Price;
+ }
+};
+/* main function */
+int main()
+{
+Machine obj1(123, 1534,"archana");     // Normal constructor
+Machine obj2 = obj1;      // Copy constructor
+cout<<"Normal constructor : ";
+obj1.display();
+cout<<"Copy constructor : ";
+obj2.display();
+return 0;
+}
+
+
+
+
+
+ Slip 16 ques 2
+
+include<iostream.h>
+
+#include<conio.h>
+
+class mystring
+
+{
+
+int a[3][3],i,j;
+
+public:
+
+void get();
+
+void put();
+
+void operator-();
+
+void operator++();
+
+};
+
+void mystring::get()
+
+{
+
+int i,j;
+
+cout<<"\n Enter Matrix element";
+
+for(i=0;i<3;i++)
+
+for(j=0;j<3;j++)
+
+cin>>a[i][j];
+
+}
+
+void mystring::put()
+
+{
+
+int i,j;
+
+cout<<"\n\n matrix is\n";
+
+for(i=0;i<3;i++)
+
+{
+
+for(j=0;j<3;j++)
+
+cout<<a[i][j];
+
+cout<<"\n";
+
+}
+
+}
+
+void mystring::operator-()
+
+{
+
+for(i=0;i<3;i++)
+
+for(j=0;j<3;j++)
+
+a[i][j]=-a[i][j];
+
+}
+
+void mystring::operator++()
+
+{
+
+for(i=0;i<3;i++)
+
+for(j=0;j<3;j++)
+
+a[i][j]=++a[i][j];
+
+}
+
+int main()
+
+{
+
+mystring m1;
+
+clrscr();
+
+cout<<"\n Enter matrix value\n.....";
+
+m1.get();
+
+m1.put();
+
+-m1;
+
+cout<<"\n after negation matrix";
+
+m1.put();
+
+++m1;
+
+cout<<"\n Increment";
+
+m1.put();
+
+m1++;
+
+m1.put();
+
+getch();
+
+return 0;
+
+}

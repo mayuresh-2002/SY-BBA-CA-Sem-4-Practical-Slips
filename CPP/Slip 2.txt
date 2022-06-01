@@ -1,0 +1,97 @@
+Ques 1:
+
+//Write a C++ program to calculate volume of cone, sphere and cylinder by using function overloading. 
+
+#include<iostream.h>
+using namespace std;
+int volume(int,int);
+int volume(int);
+
+int main()
+{
+int r,bs,ht;
+cout<<"Enter radius of sphere,cone ";
+cin>>r;
+cout<<"Enter radius of cylinder ";
+cin>>bs;
+cout<<"Enter height of cone and cylinder:";
+cin>>ht;
+cout<<"Volume of cone, sphere and cylinder is = "<<volume(r,ht)<<volume(r)<<volume(bs,ht);
+getch();
+}
+
+int volume(int r,int ht)
+{
+return(1.05*r*r*h);    //vol of cone is pi*r2*h/3
+}
+int volume(int r)
+{
+return(4*3.14*r*r*r/3);
+}
+int volume(int bs,float ht)
+{
+return(3.14*bs*bs*ht);
+} 
+
+
+Ques 2:
+
+//Write a C++ program to create a class Movie which contains data members as M_Name, Release_Year, Director_name, Budget. Write necessary member functions to
+i. Accept details from user for ‘n’ movie and write it in a file “Movies.txt”.
+ii. Display details of movie from a file.
+iii. Count the number of objects stored in a file. 
+
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+class movie
+{
+int mid
+char mname[20];
+char dname[15];
+int ryear;
+double bud;
+public:void accept()
+{
+cout<<"enter the movie id";
+cin>>mid;
+cout<<"enter the movie name";
+cin>>mname;
+cout<<"enter the director name";
+cin>>dname;
+cout<<"enter the budget";
+cin>>bud;
+cout<<"enter the release year";
+cin>>ryear;
+}
+void display()
+{
+cout<<"the movie id is"<<mid;
+cout<<"the movie name is"<<mname;
+cout<<"the director name is"<<dname;
+cout<<"the movie budget is"<<budget;
+cout<<"the movie release year is"<<ryear;
+}
+void main()
+{
+movie m[5];
+int n,i;
+clrscr();
+fstream file;
+file.open("movie.txt",ios::in|ios::out);
+cout<<"enter the no of record you want -";
+cin>>n;
+for(i=0;i<=n;i++)
+{
+m[i].accept();
+file.write((char*)&m[i],sizeof(m[i]));
+}
+cout<<"\ndetails of movie from the file-";
+for(i=0;i<n;i++)
+{
+file.read((char*)&m[i],sizeof(m[i]));
+m[i].display();
+}
+file.close();
+getch();
+} 

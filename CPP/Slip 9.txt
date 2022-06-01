@@ -1,0 +1,152 @@
+Slip 9 ques 1
+
+class Person
+{
+char Name [20];
+char Add r [30];
+float Salary;
+float tax_amount;
+public:
+II member functions
+};
+Calculate tax amount by checking salary of a person
+•For salary <=20000 tax rate=0    
+•For salary >20000 ||< =40000  tax rate= 5% of salary.      
+•For salary >40000  tax rate =10% of salary.*/
+                         
+#include<iostream.h>
+#include<conio.h>
+class person
+{
+char name[20];
+char addr[20];
+float sal,tax;
+ public:
+void get()
+{
+cout<<"Enter the name, address, salary : \n";
+cin>>name>>addr>>sal;
+}
+void put()
+{
+cout<<"Person Information:\n";
+cout<<"Name\tAddress\tSalary\tTax: \n";
+cout<<"=================================================\n";
+cout<<name<<"\t"<<addr<<"\t"<<sal<<"\t"<<tax<<endl;
+}
+void cal_tax()
+{
+if(sal<=20000) //salary <=20000
+{
+tax=0;
+}
+else if(sal>=20000||sal<=40000)//salary >20000 11< =40000    tax rate= 5% of salary.
+{
+tax=(sal*5)/100;
+}
+else if(sal >40000) //salary >40000  tax rate =10% of salary
+{
+tax=(sal*10)/100;
+}
+}
+};
+void main()
+{
+person p;
+clrscr();
+p.get();
+p.cal_tax();
+p.put();
+getch();
+}
+
+
+
+
+Slip 9 ques 2
+
+include<iostream.h>
+
+#include<conio.h>
+
+#include<iomanip.h>
+
+class time
+
+{
+
+int h,m,s;
+
+public:
+
+void getdata();
+
+void display();
+
+time operator-(time t2);
+
+};
+
+void time::getdata()
+
+{
+
+cout<<"\nEnter hour,minutes and seconds\n";
+
+cin>>h>>m>>s;
+
+}
+
+void time::display()
+
+{
+
+cout<<"\nTime is-> "<<setfill('0')<<setw(2)<<h;
+
+cout<<":"<<setfill('0')<<setw(2)<<m;
+
+cout<<":"<<setfill('0')<<setw(2)<<s<<endl;
+
+}
+
+time time::operator-(time t2)
+
+{
+
+time t;
+
+t.h=h-t2.h;
+
+t.m=m-t2.m;
+
+t.s=s-t2.s;
+
+return t;
+
+}
+
+void main()
+
+{
+
+clrscr();
+
+time t1,t2,t3;
+
+t1.getdata();
+
+t1.display();
+
+t2.getdata();
+
+t2.display();
+
+t3=t1-t2;
+
+cout<<"\nTime1 - Time2:\n";
+
+t3.display();
+
+getch();
+
+}

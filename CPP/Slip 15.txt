@@ -1,0 +1,110 @@
+Slip 15 ques 1
+
+ #include<iostream.h>
+#include<conio.h>
+class fraction
+{
+int num;
+int deno;
+public:
+fraction()
+{
+}
+fraction(int a,int b)
+{
+num=a;
+deno=b;
+}
+void display()
+{
+cout<<"\n The numerator is-"<<num;
+cout<<"\n The denominator is-"<<deno;
+cout<<"\nFraction is-"<<num<<"/"<<deno;
+}
+friend fraction operator +(fraction &, fraction &)
+};
+fraction operator +(fraction &p, fraction &q)
+{
+fraction a;
+a.num=p.num + q.num;
+a.deno=p.deno + p.deno;
+return a;
+}
+void main()
+{
+fraction f1(2,1);
+fraction f2(3,2);
+fraction f3;
+clrscr();
+f1.display();
+f2.display();
+f3=f1+f2;
+cout<<"\nAfter Addition-";
+f3.display();
+getch();
+}
+
+
+Slip 15 ques 2
+
+include<iostream.h>
+#include<conio.h>
+class sales
+{
+char sname[20],pname[20];
+int squantity,target,month;
+float commission;
+public:
+void get()
+{
+cout<<"Enter salesman name:\t";
+cin>>sname;
+cout<<"\nEnter product name:\t";
+cin>>pname;
+cout<<"\nEnter sales quantity:\t";
+cin>>squantity;
+cout<<"\nEnter target:\t";
+cin>>target;
+cout<<"\nEnter month:\t";
+cin>>month;
+ }
+void put()
+{
+cout<<"\nSalesman name:\t"<<sname;
+cout<<"\nProduct name:\t"<<pname;
+cout<<"\nSales quantity:\t"<<squantity;
+cout<<"\nTarget:\t"<<target;
+cout<<"\nMonth:\t"<<month;
+commission=0;
+if(squantity>target)
+{
+commission=commission+((squantity-target)*0.25)+(target*0.10);
+}
+else if(target=squantity)
+{
+commission=commission+(target*0.10);
+}
+else
+{
+commission=0;
+}
+cout<<"\nCommission:\t"<<commission;
+}
+};
+void main()
+{
+sales sman[10];
+int i,n;
+clrscr();
+cout<<"\n Enter how many Salesman : ";
+cin>>n;
+for(i=0;i<n;i++)
+{
+sman[i].get();
+}
+for(i=0;i<n;i++)
+{
+sman[i].put();
+}
+getch();
+ }

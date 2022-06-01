@@ -1,0 +1,85 @@
+
+Slip 23 Question 1
+
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class string
+{
+char *cp;
+int len;
+public:
+void input()
+{ 
+cout<<"Enter your string: "; 
+cin.getline(cp,20); 
+} 
+void display()
+{ 
+cout<<"String: "<<cp; 
+} 
+void get(char *s)
+{
+len=strlen(s);
+cp=new char[len+1];
+}
+ string operator+(string s)
+{
+string obj;
+strcat(cp,s.cp);
+strcpy(obj.cp,cp);
+return obj;
+}
+};
+void main()
+{
+string s1,s2,s3;
+s1.input();
+s2.input();
+s3=s1+s2;
+s3.display();
+getch();
+}
+
+
+Slip 23 ques 2
+
+#include<stdio.h>
+#include<conio.h>
+#include<iostream.h>
+
+class max
+{
+ int a,b;
+
+ public:
+
+ max() //default constructor
+{  
+}
+
+max(int a1,int b1) //parameterized constructor
+{
+ a=a1;
+ b=b1;
+ }
+void maximum()
+ {
+  if(a>b)
+ cout<<endl<<a<<"is greater";
+ else
+  cout<<endl<<b<<"is greater";
+ }
+};
+
+void main()
+{
+ int c,d;
+ clrscr();
+cout<<endl<<"enter number";
+cin>>c;
+cin>>d;
+max b(c,d);
+ b.maximum();
+ getch();
+}

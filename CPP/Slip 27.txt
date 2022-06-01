@@ -1,0 +1,128 @@
+Slip 27 ques 1
+
+#include<iostream.h>
+
+#include<conio.h>
+
+class college
+
+{
+
+int cid,year;
+
+char cname[10],uname[10];
+
+public:
+
+friend istream &operator>>(istream &scan,college &d)
+
+{
+
+cout<<"Enter the College Details\n";
+
+scan>>d.cid>>d.year>>d.cname>>d.uname;
+
+return scan;
+
+}
+
+friend ostream &operator<<(ostream &print,college &d)
+
+{
+
+print<<d.cid<<"\n"<<d.year<<"\n"<<d.cname<<"\n"<<d.uname;
+
+return print;
+
+}
+
+};
+
+void main()
+
+{
+
+college dd;
+
+clrscr();
+
+cin>>dd;
+
+cout<<"\ncollege Details: -";
+
+cout<<dd;
+
+getch();
+
+}
+
+
+Slip 27 ques 2
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<iostream.h>
+class dynamic
+{
+                int size,*ptr,*p;
+                public:
+                dynamic(int no)
+                {
+                                size=no;
+                                ptr=new int[size];
+                                for(int i=0;i<size;i++)
+                                {
+                                                cout<<"enter element";
+                                                cin>>ptr[i];
+                                }
+                }
+                void display()
+                {
+                                cout<<"elements are";
+                                for(int i=0;i<size;i++)
+                                {
+                                                cout<<ptr[i]<<"\t";
+                                }
+                }
+
+                void evnodd()
+                {
+                                int i;
+                                cout<<"even nos are : \t";
+                                for(i=0;i<size;i++)
+                                {
+                                                if(ptr[i]%2==0)
+                                                {
+                                                                cout<<ptr[i];
+                                                                cout<<"\t";
+                                                }
+                                }
+                                cout<<"\n Odd nos are : \t ";
+                                for(i=0;i<size;i++)
+                                {
+                                                if(ptr[i]%2!=0)
+                                                {
+                                                                cout<<ptr[i];
+                                                                cout<<"\t";
+                                                }
+                                }
+                }
+
+                ~dynamic()
+                {delete ptr;
+                }
+
+};
+
+void main()
+{
+                int n;
+                clrscr();
+                cout<<"enter size";
+                cin>>n;
+                dynamic d(n);
+                d.display();
+                d.evnodd();
+                getch();
+}

@@ -1,0 +1,142 @@
+ 
+ #include<iostream.h>
+#include<string.h>
+#include<math.h>
+#include<conio.h>
+#include<stdio.h>
+ 
+class fd
+{
+int fdno,mnth;
+float amt, rate, m_amt;
+char nm[20];
+public:
+fd(int fno, int mnt, float am, float rt, char *name)
+{
+fdno=fno;
+mnth=mnt;
+amt=am;
+rate=rt;
+strcpy(nm, name);
+}
+void accept()
+{
+cout<<"\n Enter Details : \n";
+cout<<"\n Enter FD No. :  ";\
+cin>>fdno;
+cout<<"\n Enter Amount :  ";
+cin>>amt;
+cout<<"\n Enter Month  :  ";
+cin>>mnth;
+cout<<"\n Enter Name   :  ";
+cin>>nm;
+}
+void display()
+{
+cout<<"\n FdNo.           :  "<<fdno;
+cout<<"\n Month           :  "<<mnth;
+cout<<"\n Amount          :  "<<amt;
+cout<<"\n Maturity Amount :  "<<m_amt;
+cout<<"\n Name            :  "<<nm;
+}
+ 
+void calculate(int rate=20)
+{
+double yr;
+yr=mnth/12.0;
+m_amt=amt*pow((1+rate/100), yr);
+cout<<"Maturity Details Rs."<<m_amt;
+}
+};
+void main()
+{
+int fdno,mnth,rate,amt;
+char *nm;
+ 
+fd w(fdno, mnth, amt, rate, nm);
+clrscr();
+w.accept();
+w.calculate();
+w.display();
+ 
+getch();
+ 
+}
+
+
+Slip 24 ques 2
+
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+ class InvoiceBill
+ {
+int oid,No_of_Products;
+int quntity[10],price[10],k;
+char name[10],pname[10][30];
+ public:
+void getdata()
+{
+cout<<"\n\n Enter the name:- ";
+cin>>name;
+cout<<"\n\n Enter the oid:- ";
+cin>>oid;
+cout<<"\n\n Enter the No_of_Products:- ";
+cin>>No_of_Products;
+for(k=0;k<No_of_Products;k++)
+{
+cout<<"\n\n Enter the pname:- ";
+cin>>pname[k];
+cout<<"\n\n Enter the quntity:- ";
+cin>>quntity[k];
+cout<<"\n\n Enter the price:- ";
+cin>>price[k];
+}
+}
+ void display()
+{
+cout<<"\n Oid:-"<<oid;
+cout<<"\n Name:-"<<name;
+cout<<"\n No_of_Products:-"<<No_of_Products;
+for(k=0;k<No_of_Products;k++)
+{
+cout<<"\n PName:-"<<pname[k];
+cout<<"\n Quantity:-"<<quntity[k];
+cout<<"\n Price:-"<<price[k];
+}
+}
+void calculate()
+{
+int total=0;
+for(k=0;k<No_of_Products;k++)
+{
+//cout<<"Bill.:-"<<quntity[k]*price[k];
+total+=quntity[k]*price[k];
+}
+cout<<"\n Total Amount:-"<<total;
+}
+};
+const int size=2;
+ void main()
+{
+ clrscr();
+  InvoiceBill * p=new InvoiceBill[10];
+//inventory * d=p;
+  //InvoiceBill s[10];
+int i,n;
+cout<<"\n How many records you waant?";
+cin>>n;
+for(i=0;i<n;i++)
+{
+p[i].getdata();
+}
+ for(i=0;i<n;i++)
+{
+p[i].display();
+}
+for(i=0;i<n;i++)
+{
+p[i].calculate();
+}
+getch();
+ }

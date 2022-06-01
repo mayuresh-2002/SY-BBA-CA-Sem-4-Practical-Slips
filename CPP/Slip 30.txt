@@ -1,0 +1,218 @@
+Slip 30 ques 1
+
+
+#include<conio.h>
+#include<iostream.h>
+class Array2;
+class Array1
+{
+int *a;
+int n1,i;
+public :
+void accept()
+{
+cout<<"\n Enter length for first array : ";
+cin>>n1;
+a=new int[n1];
+for(i=0;i<n1;i++)
+{
+cout<<"\n Enter value amol : ";
+cin>>a[i];
+}
+}
+void display()
+{
+for(i=0;i<n1;i++)
+{
+cout<<a[i]<<"\t";
+}
+}
+ friend void smallest(Array1,Array2);
+};
+class Array2
+{
+int *b;
+int n2,i;
+public :
+void accept1()
+{
+cout<<"\n Enter length for second array : ";
+cin>>n2;
+b=new int[n2];
+for(i=0;i<n2;i++)
+{
+cout<<"\n Enter elements : ";
+cin>>b[i];
+}
+}
+void display()
+{
+for(i=0;i<n2;i++)
+cout<<b[i]<<"\t";
+}
+friend void avg(Array1,Array2);
+};
+void avg(Array1 ob1,Array2 ob2)
+{
+int s1,s2;
+int i,sum,avg;
+ 
+for(i=0;i<ob1.n1;i++)
+{
+sum=sum+ob1.a[i];//calculate sum
+avg=sum/ob1.n1;//calculate average
+}
+cout<<"Average of entered numbers are: "<<avg;
+for(i=1;i<ob2.n2;i++)
+{
+sum=sum+ob2.b[i];//calculate sum
+avg=sum/ob2.n2;//calculate average
+}
+cout<<"Average of entered numbers are: "<<avg;
+}
+ 
+void main()
+{
+Array1 a1;
+Array2 a2;
+clrscr();
+a1.accept();
+a2.accept1();
+cout<<"\n 1st array : ";
+a1.display();
+cout<<"\n 2nd array : ";
+a2.display();
+avg(a1,a2);
+getch();
+}
+
+
+Slip 30 ques 2
+
+include<iostream.h>
+
+#include<conio.h>
+
+#include<malloc.h>
+
+class student
+
+{
+
+int rollno;
+
+char name[10];
+
+int tot_sub;
+
+char sub_name[10][30];
+
+int marks[10];
+
+int tot_marks;
+
+float per;
+
+//    char grade;
+
+public:
+
+void getdata()
+
+{
+
+cout<<"\n\n Enter the Roll no: ";
+
+cin>>rollno;
+
+cout<<"\n\n Enter the name: ";
+
+cin>>name;
+
+cout<<"\n\n How many subject: ";
+
+cin>>tot_sub;
+
+ for(int i=0;i<tot_sub;i++)
+
+{
+
+cout<<"\n\n Enter the subject name; ";
+
+cin>>sub_name[i];
+
+cout<<"\n\n Enter the marks: ";
+
+cin>>marks[i];
+
+}
+
+}
+
+public:void display()
+
+{
+
+tot_marks=0;
+
+cout<<"\n Roll number:"<<rollno;
+
+cout<<"\n Student name: "<<name;
+
+for(int i=0;i<tot_sub;i++)
+
+{
+
+cout<<"\n Subject name: "<<sub_name[i];
+
+cout<<"\n Subject mark: "<<marks[i];
+
+tot_marks=tot_marks+marks[i];
+
+}
+
+per=tot_marks/tot_sub;
+
+cout<<"\n\n Total obtain marks: "<<tot_marks;
+
+cout<<"\n\n Percentge: "<<per;
+
+if(per>=70)
+
+cout<<"\n \n Grade=Dist";
+
+else if(per>=60)
+
+cout<<"\n \n Grade=A";
+
+else if(per>=50)
+
+cout<<"\n \n Grade=B";
+
+else if(per>=40)
+
+cout<<"\n \n Grade=Pass";
+
+else
+
+cout<<"\n \n Grade=Fail";
+
+}
+
+};
+
+ void main()
+
+{
+
+clrscr();
+
+student s;
+
+s.getdata();
+
+s.display();
+
+getch();
+
+}
