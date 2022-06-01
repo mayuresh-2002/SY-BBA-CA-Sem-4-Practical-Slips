@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Book Store>
+<Books>
+<PHP>
+<Title> Programming in PHP </ Title>
+<Publication>O’RELLY<Publication>
+</PHP>
+<PHP>
+<Title> Beginners PHP</ Title>
+<Publication> WORX</Publication>
+</PHP>
+</Books>
+</Book Store>
+HTML file :
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Store</title>
+</head>
+<body>
+<form action="book.php" method="get">
+<table>
+<tr><td><label> Enter 1st Book title Name : </label></td><td><input type="text" name="title_1" id="title_1"></td></tr>
+<tr><td><label> Enter 1st Book Publication Name : </label></td><td><input type="text" name="pub_1" id="pub_1"></td></tr>
+<tr><td><label> Enter 2st Book title Name : </label></td><td><input type="text" name="title_2" id="title_2"></td></tr>
+<tr><td><label> Enter 1st Book Publication Name : </label></td><td><input type="text" name="pub_2" id="pub_2"></td></tr>
+<tr><th colspan="2"><input id="ok" type="submit" value="OK" name="ok"></th></tr>
+</table>
+</form>
+</body>
+</html>
+?>
+<?xml version='1.0' encoding ='ISO-8859-1' ?><BookStore><Books><PHP><Title></Title><Publication></Publication></PHP><PHP><Title></Title><Publication></Publication></PHP></Books></BookStore>

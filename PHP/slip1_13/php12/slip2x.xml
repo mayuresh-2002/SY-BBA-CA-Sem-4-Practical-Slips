@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<student>
+
+ <stud>
+
+<rollno>111</rollno>
+
+<name>BBBB</name>
+
+<address>pune</address>
+
+<college>FCC</college>
+
+<course>FYBCA</course>
+
+</stud>
+
+ 
+
+<stud>
+
+<rollno>222</rollno>
+
+<name>CCCC</name>
+
+<address>pune</address>
+
+<college>FC</college>
+
+<course>SYBCA</course>
+
+</stud>
+
+ </student>
