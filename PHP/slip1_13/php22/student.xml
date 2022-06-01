@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css"?>
+
+ 
+
+<StudentData>
+
+<student>
+
+<rollno>1</rollno>
+
+<name>archana</name>
+
+<class>MCA</class>
+
+</student>
+
+ 
+
+<student1>
+
+<rollno>2</rollno>
+
+<name>Adhira</name>
+
+<class>BCA</class>
+
+</student1>
+
+ </StudentData>

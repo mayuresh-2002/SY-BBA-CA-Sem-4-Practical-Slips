@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript">
+function show(str)
+{
+	var xmlhttp;
+if(window.XMLHttprequest)
+xmlhttp=new XMLHttpRequest();
+else
+xmlhttp=new ActiveObject("Microsoft.XMLHTTP");
+xmlhttp.onreadystateexchange=function()
+{
+if(xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementByID("result").innerHTML=xmlhttp.responsetext:
+}
+};
+xmlhttp.open("GET","AJAX validation.php?txt"+str,false);
+xmlhttp.send();
+}
+</script>
+<body>
+<form action="validation.php">
+User name:
+<input type=:text" name="text" onkeyup="show(this.value)"/><br>
+</form>
+<div id='result'></div>
+</body>
+<html>

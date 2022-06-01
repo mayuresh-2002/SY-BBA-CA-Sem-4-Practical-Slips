@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CricketTeam>
+                 <Team country=”India”>
+                     <player>sachin</player>
+                     <runs>36000</runs>
+                     <wicket>88</wicket>
+                 </Team>
+             <Team country=”Australia”>
+                     <player>watsun</player>
+                     <runs>10000</runs>
+                     <wicket>44</wicket>
+                 </Team>
+             <Team country=”Pakisthan”>
+                     <player>Afridhi</player>
+                     <runs>6000</runs>
+                     <wicket>65</wicket>
+                 </Team>
+             </CricketTeam>
+cricket.php
